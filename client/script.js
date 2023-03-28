@@ -46,8 +46,8 @@ function chatStripe (isAi, value, uniqueId) {
         <div class="chat">
           <div class="profile">
             <img 
-            src="${isAi ? bot : user}"
-            alt="${isAi ? 'bot' : 'user'}"
+              src="${isAi ? bot : user}"
+              alt="${isAi ? 'bot' : 'user'}"
             />
           </div>
           <div class="message" id=${uniqueId}>${value}</div>
@@ -92,7 +92,7 @@ const handleSubmit = async (e) => {
   clearInterval(loadInterval);
   messageDiv.innerHTML= '';
 
-  if (response.ok) {
+  if(response.ok) {
     const data = await response.json();
     const parsedData = data.bot.trim();
 
@@ -104,11 +104,11 @@ const handleSubmit = async (e) => {
 
     alert(err);
   }
-}
+};
 
 form.addEventListener('submit', handleSubmit);
 form.addEventListener('keyup', (e) => {
   if (e.keyCode === 13) {
     handleSubmit(e);
   }
-})
+});
